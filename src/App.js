@@ -2,7 +2,7 @@ import './App.css';
 import React, { Component, useState, useEffect } from 'react'
 import Table from './components/Table'
 import Header from './components/Header'
-import Search from './components/Search'
+import SearchBox from './components/SearchBox/SearchBox'
 import axios from "axios";
 import API from "./components/util/API";
 
@@ -11,6 +11,7 @@ const App = () => {
 
   const [employees, setEmployees] = useState([])
   const [count, setCount] = useState(0);
+  const [searchField, setSearch] = useState("");
  
   useEffect(() => {
 
@@ -19,7 +20,6 @@ const App = () => {
       if (retrieved) {
         let parsed =  JSON.parse(retrieved)
         setEmployees(parsed);
-        
 
       }
       else {
@@ -49,7 +49,6 @@ const App = () => {
     }
   }
 
-  console.log(employees);
 
   // const handleInputChange = event => {
   //   setSearch(event.target.value);
@@ -60,11 +59,21 @@ const App = () => {
     const data = res.data.results
     return data
   };
+
+ 
+  const filteredEmployees = employees.filter(employee => {
+    employee = (employee.name.first.toLowerCase());
+    let search = (searchField.toLowerCase());
+    return employee.includes(search);
+  })
+
   return (
     <>
       <Header />
-      <Search key = {1} employees={employees} />
-      <Table onClick={sortArray} key = {1} employees={employees} />
+      <SearchBox placeholder = "Search" handleChange = { (e) => {
+        setSearch(e.target.value) 
+      }}/>
+      <Table onClick={sortArray} key = {1}  employees = {filteredEmployees}/>
     </>
   );
 }
