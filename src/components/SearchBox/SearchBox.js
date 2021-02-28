@@ -4,11 +4,11 @@ export const SearchBox = (props) => {
     return (
         
         <div style={{
-            position: 'absolute', left: '50%', top: '130px',
+            position: 'absolute', left: '50%', top: '240px',
             transform: 'translate(-50%, -50%)'
         }}>
-            <input type="search" className="search form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm"
-            style = {{width: 200}} placeholder = {props.placeholder} onChange = {props.handleChange} />
+            <input type="search" className="search form-control border-5"
+            style = {{width: 300}} placeholder = {props.placeholder} onChange = {props.handleChange} />
         </div>
     )
 }
