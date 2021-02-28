@@ -2,6 +2,8 @@ import './App.css';
 import axios from 'axios';
 import React, { Component, useState, useEffect } from 'react'
 import Image from './components/Image'
+import Header from './components/Header'
+import Search from './components/Search'
 
 
 const App = () => {
@@ -25,12 +27,16 @@ const App = () => {
 
   // getEmployee();
   return (
+    <>
+      <Header />
+      <Search />
     <div className="row container">
-      {employees.map((employee) => (
-      <Image employee={employee} />
-  ))} 
+      {employees.map((employee) => (       
+      <Image  employee={employee} />
+      ))}
 
     </div>
+  </>
   )
 }
 
