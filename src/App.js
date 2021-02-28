@@ -6,42 +6,46 @@ import Search from './components/Search'
 import axios from "axios";
 import API from "./components/util/API";
 
-const App =  () => {
+const App = () => {
 
-  let employees = [];
+
+  const [employees, setEmployees] = useState([])
   let retrieved = [];
 
+  useEffect(() => {
 
-  const getEmployees = () => {
-    retrieved = localStorage.getItem('employees');
-    if (retrieved) {
-      employees = JSON.parse(retrieved);
-      console.log(employees)
+    const getEmployees = async () => {
+      retrieved = localStorage.getItem('employees');
+      if (retrieved) {
+        let parsed = JSON.parse(retrieved)
+        setEmployees(parsed);
+        console.log(employees)
+      }
+      else {
+        const list = await fetchEmployees();
+        let stringStore = JSON.stringify(list)
+        localStorage.setItem('employees', stringStore);
+        setEmployees(list);
+      }
     }
-    else {
-      API.search()
-        .then(res => {
-          retrieved = localStorage.setItem('employees', JSON.stringify(res.data.results));
-          employees = res.data.results;
-          window.location.reload(); 
-        })
-        .catch(err => console.log(err));
-    }
+      getEmployees()
+  }, [])
+
+  const fetchEmployees = async () => {
+    const res = await API.search();
+    const data = res.data.results
+    return data
+  };
+    return (
+      <>
+        <Header />
+        <Search employees={employees} />
+        <Table employees={employees} />
+      </>
+    );
   }
-  getEmployees()
 
 
-
-  return (
-    <>
-      <Header />
-      <Search employees={employees} />
-      <Table employees={employees} />
-    </>
-  );
-}
-
-
-export default App
+  export default App
 
 
