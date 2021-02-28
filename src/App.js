@@ -1,39 +1,46 @@
 import './App.css';
-import axios from 'axios';
 import React, { Component, useState, useEffect } from 'react'
 import Table from './components/Table'
 import Header from './components/Header'
 import Search from './components/Search'
+import axios from "axios";
+import API from "./components/util/API";
+
+const App =  () => {
+
+  let employees = [];
+  let retrieved = [];
 
 
-const App = () => {
-
-  const [employees, setEmployees] = useState([])
-
-  useEffect(() => {
-    const getEmployees = async () => {
-      const EmployeesFromServer = await fetchEmployees()
-      setEmployees(EmployeesFromServer);
+  const getEmployees = () => {
+    retrieved = localStorage.getItem('employees');
+    if (retrieved) {
+      employees = JSON.parse(retrieved);
+      console.log(employees)
     }
-    getEmployees()
-  }, [])
+    else {
+      API.search()
+        .then(res => {
+          retrieved = localStorage.setItem('employees', JSON.stringify(res.data.results));
+          employees = res.data.results;
+          window.location.reload(); 
+        })
+        .catch(err => console.log(err));
+    }
+  }
+  getEmployees()
 
-  const fetchEmployees = async () => {
-    const res = await fetch('https://randomuser.me/api/?results=50')
-    const data = await res.json()
-    let list = data.results;
-    return list
-  };
 
-  // getEmployee();
+
   return (
     <>
       <Header />
-      <Search />
-      <Table employees={employees}/>
-  </>
-  )
+      <Search employees={employees} />
+      <Table employees={employees} />
+    </>
+  );
 }
+
 
 export default App
 

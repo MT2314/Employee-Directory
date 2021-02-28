@@ -6,7 +6,6 @@ import Email from './Email'
 import DOB from './DOB'
 
 const Table = ({employees}) => {
-    console.log(employees);
 
     return (
         <>
@@ -30,23 +29,23 @@ const Table = ({employees}) => {
 
        
     {employees.map((employee) => (    
-        <div className="row d-flex justify-content-center">
+        <div className="row mt-3 d-flex justify-content-center">
             <div className="col d-flex justify-content-center">
-            <Image employee = {employee}/>
+            <Image key = {employee.id.value} employee = {employee}/>
             </div>
             <div className="col d-flex justify-content-center">
-                <Name employee = {employee}/>
+                <Name key = {employee.id.value} employee = {employee}/>
             </div>
             <div className="col d-flex justify-content-center">
-            <Phone employee = {employee}/>
+            <Phone key = {employee.id.value} employee = {employee}/>
 
             </div>
             <div className="col d-flex justify-content-center">
-            <Email employee = {employee}/>
+            <Email key = {employee.id.value} employee = {employee}/>
 
             </div>
             <div className="col d-flex justify-content-center">
-            <DOB employee = {employee}/>
+            <DOB key = {employee.id.value} employee = {employee}/>
 
             </div>
         </div>
