@@ -10,30 +10,46 @@ const App = () => {
 
 
   const [employees, setEmployees] = useState([])
-  let retrieved = [];
-
+  const [count, setCount] = useState(0);
+ 
   useEffect(() => {
 
     const getEmployees = async () => {
-      retrieved = localStorage.getItem('employees');
+      let retrieved = localStorage.getItem('employees');
       if (retrieved) {
-        let parsed = JSON.parse(retrieved)
+        let parsed =  JSON.parse(retrieved)
         setEmployees(parsed);
-        console.log(employees)
+        
+
       }
       else {
         const list = await fetchEmployees();
         let stringStore = JSON.stringify(list)
         localStorage.setItem('employees', stringStore);
         setEmployees(list);
+        
       }
     }
     getEmployees()
   }, [])
 
+
+
+  
   const sortArray = () => {
-    alert('hi');
+    if (count % 2 == 0) {
+      let sortemployees = employees.sort((a, b) => a.name.first.localeCompare(b.name.first));
+      setEmployees([...sortemployees]);
+      setCount(count + 1);
+    }else{
+      let sortemployees = employees.sort((a, b) => b.name.first.localeCompare(a.name.first));
+      setEmployees([...sortemployees]);
+      setCount(count + 1);
+
+    }
   }
+
+  console.log(employees);
 
   // const handleInputChange = event => {
   //   setSearch(event.target.value);
@@ -47,8 +63,8 @@ const App = () => {
   return (
     <>
       <Header />
-      <Search employees={employees} />
-      <Table onClick={sortArray} employees={employees} />
+      <Search key = {1} employees={employees} />
+      <Table onClick={sortArray} key = {1} employees={employees} />
     </>
   );
 }

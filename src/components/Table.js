@@ -11,19 +11,19 @@ const Table = ({employees, onClick}) => {
         <>
         <div className="row border-bottom border-top border-2 d-flex justify-content-center" style={{ marginTop: '80px' }}>
             <div className="col d-flex justify-content-center mt-2">
-            <a onClick = {onClick}>Image</a>
+            <p>Image</p>
             </div>
             <div className="col d-flex justify-content-center mt-2">
             <a onClick = {onClick}>Name</a>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-            <a onClick = {onClick}>Phone Number</a>
+                <p>Image</p>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-            <a onClick = {onClick}>E-mail</a>
+                <p>Image</p>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-            <a onClick = {onClick}>Image</a>
+                <p>Image</p>
             </div>
         </div>
 
@@ -57,9 +57,3 @@ const Table = ({employees, onClick}) => {
 
 export default Table
 
-
-    // <div className="row container">
-    // {employees.map((employee) => (       
-    // //   <Image  employee={employee} />
-    // //   ))}
-    // //     </div>
