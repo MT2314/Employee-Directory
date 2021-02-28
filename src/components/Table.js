@@ -5,25 +5,25 @@ import Phone from './Phone'
 import Email from './Email'
 import DOB from './DOB'
 
-const Table = ({employees}) => {
+const Table = ({employees, onClick}) => {
 
     return (
         <>
         <div className="row border-bottom border-top border-2 d-flex justify-content-center" style={{ marginTop: '80px' }}>
             <div className="col d-flex justify-content-center mt-2">
-            <p>Image</p>
+            <a onClick = {onClick}>Image</a>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Name</p>
+            <a onClick = {onClick}>Name</a>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Image</p>
+            <a onClick = {onClick}>Phone Number</a>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Image</p>
+            <a onClick = {onClick}>E-mail</a>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Image</p>
+            <a onClick = {onClick}>Image</a>
             </div>
         </div>
 

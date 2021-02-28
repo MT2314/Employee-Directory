@@ -28,24 +28,32 @@ const App = () => {
         setEmployees(list);
       }
     }
-      getEmployees()
+    getEmployees()
   }, [])
+
+  const sortArray = () => {
+    alert('hi');
+  }
+
+  // const handleInputChange = event => {
+  //   setSearch(event.target.value);
+  // };
 
   const fetchEmployees = async () => {
     const res = await API.search();
     const data = res.data.results
     return data
   };
-    return (
-      <>
-        <Header />
-        <Search employees={employees} />
-        <Table employees={employees} />
-      </>
-    );
-  }
+  return (
+    <>
+      <Header />
+      <Search employees={employees} />
+      <Table onClick={sortArray} employees={employees} />
+    </>
+  );
+}
 
 
-  export default App
+export default App
 
 
