@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+import React, { Component, useState, useEffect } from 'react'
+import Image from './components/Image'
 
-function App() {
+
+const App = () => {
+
+  const [employees, setEmployees] = useState([])
+
+  useEffect(() => {
+    const getEmployees = async () => {
+      const EmployeesFromServer = await fetchEmployees()
+      setEmployees(EmployeesFromServer);
+    }
+    getEmployees()
+  }, [])
+
+  const fetchEmployees = async () => {
+    const res = await fetch('https://randomuser.me/api/?results=50')
+    const data = await res.json()
+    let list = data.results;
+    return list
+  };
+
+  // getEmployee();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="row container">
+      {employees.map((employee) => (
+      <Image employee={employee} />
+  ))} 
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
+
