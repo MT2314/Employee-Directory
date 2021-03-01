@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+:part_alternation_mark:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    
+# Employee Database   -- React App
+---
 
-## Available Scripts
+>Link to github repository https://github.com/MT2314/Employee-Directory
+#### Deployed App Link
+https://mt2314.github.io/Employee-Directory/
 
-In the project directory, you can run:
+https://employee-database--system.herokuapp.com/
+    
+<img src= "./public/Screenshot1.jpg" alt="Burger Order System Screenshot" width="700"/>
+    
+## Description
+---
+##### Progressive Budget Tracking Application
+</br>
 
-### `npm start`
+> Built using React 
+> Seeding Data with Web Api to be used as props to display data
+> Seemless Search and Sort Database
+    
+</br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##Table of Contents
+---
+[Technologies Used](#technologies)
+[Usage](#usage-guide)
+[License](#license)
+[Contributing](#contributing)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+### Technologies
+HTML , CSS , Javascript , React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Usage Guide
 
-### `npm run build`
+#####Follow Steps
+* Navigate to website (either link)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+--- Github Pages
+https://mt2314.github.io/Employee-Directory/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+--- Heroku
+https://employee-database--system.herokuapp.com/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Scroll down the list to see Employees
+* Click on headers to sort order of employees
+* Search by employee name 
+  
 
-### `npm run eject`
+### Contributing
+---
+> :school: 
+**University of Toronto Continuing Educationg
+Full Stack Flex Program** 
+:school:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+:heart: 
+*Students and Instructors At the UFT-FSF-2020-2021*
+:heart:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### License
+---
+Licensed under the MIT license.
+<br>
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+</br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+:lock::lock::lock::lock:
