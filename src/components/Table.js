@@ -14,16 +14,16 @@ const Table = ({employees, onClick}) => {
             <p>Image</p>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-            <a onClick = {onClick}>Name</a>
+            <a onClick = {onClick} style = {{cursor:"pointer"}}>Name</a>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Image</p>
+                <p>Phone Number</p>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Image</p>
+                <p>Email</p>
             </div>
             <div className="col d-flex justify-content-center mt-2">
-                <p>Image</p>
+                <p>DOB</p>
             </div>
         </div>
 
